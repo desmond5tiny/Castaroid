@@ -1,0 +1,1 @@
+Castaroid is a little game about being stranded on an asteroid
