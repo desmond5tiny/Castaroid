@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+    totalSpriteSurfaceArea: 48128
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -7943112648549502337, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 2417243060935446341, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 2063785747495429125, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 7537879422239517778, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -4991697720787592544, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -2589227083045165400, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -5500240410519065612, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 422687267901296396, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -5061129123930507190, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -1040718542012046529, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -1564915213980059315, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -4594142286690855640, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -5094008084986423721, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 3053775219767777850, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -7573111752310723087, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -1379805579022062577, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 5867749680143540126, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -5139145571873268689, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 7289997298393378171, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 4794869006054485796, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 6835734196234066750, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 4893686963032880449, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -8818758156154592419, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -8304763159661538252, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 624425973152121298, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -7312167020636205344, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -5895268160284376562, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 8120439636541603960, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 889014408824835197, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -8980794434041212535, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -3302432396732479025, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -5725708160125071530, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 3545704088561188395, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 2745142566699041601, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -2479114498606677917, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -1830820352752154435, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -8919476968499006627, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -6260016395095688563, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 137483515510356279, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -8677162179609497451, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 1106869902817453528, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -3494720056182997831, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -4583461707253139608, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 4621308537740882812, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 8388185160231197935, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: 64110295904444031, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  - {fileID: -3049731769850856493, guid: d9b239110e0a04b43a3a882144956d5a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TS_SandyRocks_36
+  - TS_SandyRocks_37
+  - TS_SandyRocks_34
+  - TS_SandyRocks_35
+  - TS_SandyRocks_29
+  - TS_SandyRocks_32
+  - TS_SandyRocks_28
+  - TS_SandyRocks_33
+  - TS_SandyRocks_30
+  - TS_SandyRocks_31
+  - TS_SandyRocks_21
+  - TS_SandyRocks_20
+  - TS_SandyRocks_23
+  - TS_SandyRocks_38
+  - TS_SandyRocks_22
+  - TS_SandyRocks_39
+  - TS_SandyRocks_25
+  - TS_SandyRocks_24
+  - TS_SandyRocks_27
+  - TS_SandyRocks_26
+  - TS_SandyRocks_10
+  - TS_SandyRocks_11
+  - TS_SandyRocks_12
+  - TS_SandyRocks_13
+  - TS_SandyRocks_14
+  - TS_SandyRocks_1
+  - TS_SandyRocks_15
+  - TS_SandyRocks_0
+  - TS_SandyRocks_16
+  - TS_SandyRocks_3
+  - TS_SandyRocks_17
+  - TS_SandyRocks_2
+  - TS_SandyRocks_18
+  - TS_SandyRocks_5
+  - TS_SandyRocks_19
+  - TS_SandyRocks_4
+  - TS_SandyRocks_7
+  - TS_SandyRocks_6
+  - TS_SandyRocks_9
+  - TS_SandyRocks_8
+  - TS_SandyRocks_46
+  - TS_SandyRocks_45
+  - TS_SandyRocks_44
+  - TS_SandyRocks_43
+  - TS_SandyRocks_42
+  - TS_SandyRocks_41
+  - TS_SandyRocks_40
+  m_RenderDataMap: {}
+  m_Tag: SpriteAtlas
+  m_IsVariant: 0
