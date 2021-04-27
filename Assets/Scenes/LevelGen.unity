@@ -402,6 +402,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8382738946543128119, guid: cd4f23273c8beb549a4e06e4d5461838, type: 3}
   m_PrefabInstance: {fileID: 1849267012}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1205070795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5705161775732221703, guid: cd4f23273c8beb549a4e06e4d5461838, type: 3}
+  m_PrefabInstance: {fileID: 1849267012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1453763555
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2140508677}
   - component: {fileID: 2140508676}
+  - component: {fileID: 2140508679}
   - component: {fileID: 2140508675}
   - component: {fileID: 2140508678}
   m_Layer: 0
@@ -643,7 +649,7 @@ Camera:
   far clip plane: 50
   field of view: 60
   orthographic: 1
-  orthographic size: 16
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -705,6 +711,25 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2140508679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140508674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1babb218fef564db19f3d776ed02d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraOffset: -10
+  zoomSpeed: 5
+  zoomMin: 5
+  zoomMax: 10
+  smoothCamera: 1
+  smoothSpeed: 0.125
+  target: {fileID: 1205070795}
 --- !u!1001 &3137067335593988994
 PrefabInstance:
   m_ObjectHideFlags: 0
