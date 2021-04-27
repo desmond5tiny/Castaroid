@@ -23,13 +23,10 @@ public class MapManager : MonoBehaviour
         //terrainTiles = Resources.LoadAll("TerrainTiles/SandyRocks");
     }
 
-    public void BuildMap (bool _loadMap, int _mapSize) // replace with 2 overload funct (mapfile arg/ mapsize arg)
+    public void BuildMap (int _seed, int _mapSize) // replace with 2 overload funct (mapfile arg/ mapsize arg)
     {
-        if (_loadMap)
-        {
-            //load mapfile and return tilemap
-        }
-        else { GenerateMap(_mapSize); }
+        Random.InitState(_seed);
+        GenerateMap(_mapSize);
     }
 
     public void GenerateMap(int _mapSize)
@@ -51,22 +48,6 @@ public class MapManager : MonoBehaviour
                         groundMap.SetTile(adjustePos, tileWhite);
                         currentMapSize += 1;
                     }
-                }
-            }
-        }
-        //AddBouds();
-    }
-
-    private void AddBouds()
-    {
-
-        for (int x = groundMap.cellBounds.xMin- boundsMapPad; x < groundMap.cellBounds.xMax + boundsMapPad; x++)
-        {
-            for (int y = groundMap.cellBounds.yMin - boundsMapPad; y < groundMap.cellBounds.yMax + boundsMapPad; y++)
-            {
-                if (!groundMap.HasTile(new Vector3Int(x,y,0)))
-                {
-                    boundsMap.SetTile(new Vector3Int(x, y, 0), tileSpace);
                 }
             }
         }
@@ -105,5 +86,4 @@ public class MapManager : MonoBehaviour
     {
         groundMap.SwapTile(tileWhite, rt_ground);
     }
-
 }

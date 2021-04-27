@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int mapSize;
     [SerializeField] GameObject tileMaps;
     [SerializeField] private GameObject player;
+    [SerializeField] private bool generateNewSeed = false;
+    
+    private int gameSeed;
     public static MapManager mapManager;
+
 
     #region Singleton
     public static GameManager Instance { get; private set; }
@@ -18,6 +23,13 @@ public class GameManager : MonoBehaviour
         else 
             { Debug.LogError("More then one instance of GameManager found!"); }
         mapManager = tileMaps.GetComponent<MapManager>();
+        if (generateNewSeed) //makes a new seed and stores it in playerprefs
+        {
+            gameSeed = (int)DateTime.Now.Ticks;
+            PlayerPrefs.SetInt("gameSeed", gameSeed);
+        }
+        else if (PlayerPrefs.HasKey("gameSeed")) { gameSeed = PlayerPrefs.GetInt("gameSeed"); }
+        else { Debug.LogError("No Game Seed found!"); } //throws error if no seed was found and was supposed to be retrieved
     }
     #endregion
     
@@ -29,11 +41,7 @@ public class GameManager : MonoBehaviour
 
     void LevelSetup()
     {
-        /*if (loadmap):
-            Load Map
-        else:
-            Generate level*/
-        mapManager.BuildMap(false, mapSize);
+        mapManager.BuildMap(gameSeed, mapSize);
         mapManager.PlaceGround();
     }
 

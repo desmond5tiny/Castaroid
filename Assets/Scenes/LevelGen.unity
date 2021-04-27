@@ -439,6 +439,7 @@ MonoBehaviour:
   mapSize: 2500
   tileMaps: {fileID: 413158477}
   player: {fileID: 1205070790}
+  generateNewSeed: 0
 --- !u!4 &1453763557
 Transform:
   m_ObjectHideFlags: 0
@@ -463,67 +464,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3981914297639606446, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
   m_PrefabInstance: {fileID: 3137067335593988994}
   m_PrefabAsset: {fileID: 0}
---- !u!66 &1479680311
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479680309}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1479680313}
-    m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
---- !u!50 &1479680312
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479680309}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!19719996 &1479680313
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479680309}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0.00001
 --- !u!1839735485 &1479680315 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: 5879722401078006137, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
@@ -737,18 +677,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 413158479}
     m_Modifications:
-    - target: {fileID: 362506173647226775, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362506173647226775, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362506173647226775, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
-      propertyPath: m_ChunkCullingBounds.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2100096211773683168, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
       propertyPath: m_Name
       value: TM_Ground
@@ -849,10 +777,6 @@ PrefabInstance:
     - target: {fileID: 5135591083386909992, guid: d9b3f7a4950a9fe41b1d3f0d851a143d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7762969227578528250, guid: d9b3f7a4950a9fe41b1d3f0d851a143d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8001462258511681249, guid: d9b3f7a4950a9fe41b1d3f0d851a143d, type: 3}
       propertyPath: m_Name

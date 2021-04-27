@@ -3,7 +3,11 @@ guid: 9e79fee7775067a4db2e002917b36bb1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundLayer: {instanceID: 0}
+  - boundsLayer: {instanceID: 0}
+  - groundMap: {fileID: 5879722401078006137, guid: 933072e58c733164fb20d75cd97b95f7, type: 3}
+  - boundsMap: {fileID: 4971503323864054286, guid: d9b3f7a4950a9fe41b1d3f0d851a143d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
