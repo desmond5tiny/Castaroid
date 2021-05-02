@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movementInput = controls.Movement.Move.ReadValue<Vector2>();
+        Vector2 movementInput = controls.Player.Move.ReadValue<Vector2>();
         transform.position += (Vector3)movementInput * speed * Time.deltaTime;
     }
 
@@ -29,5 +29,10 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+    private void Interact()
+    {
+
     }
 }

@@ -15,7 +15,7 @@ public class @InputManager : IInputActionCollection, IDisposable
     ""name"": ""InputManager"",
     ""maps"": [
         {
-            ""name"": ""Movement"",
+            ""name"": ""Player"",
             ""id"": ""fc642593-74fb-41ae-ba67-8a24ce88b7ab"",
             ""actions"": [
                 {
@@ -23,6 +23,14 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""fcf1b46e-3622-4198-84ae-f785fa8ffb41"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""NormalizeVector2"",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""69e489d8-a084-414b-8774-f18822cd0e25"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": ""NormalizeVector2"",
                     ""interactions"": ""Press""
                 }
@@ -192,6 +200,28 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f7e6a4a-02aa-42e7-b9c0-74dad15d0814"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a19ece2-32f8-4f92-815c-b4bb22d986c6"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -286,9 +316,10 @@ public class @InputManager : IInputActionCollection, IDisposable
         }
     ]
 }");
-        // Movement
-        m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
-        m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // Camera
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_Zoom = m_Camera.FindAction("Zoom", throwIfNotFound: true);
@@ -338,38 +369,46 @@ public class @InputManager : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Movement
-    private readonly InputActionMap m_Movement;
-    private IMovementActions m_MovementActionsCallbackInterface;
-    private readonly InputAction m_Movement_Move;
-    public struct MovementActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Interact;
+    public struct PlayerActions
     {
         private @InputManager m_Wrapper;
-        public MovementActions(@InputManager wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Movement_Move;
-        public InputActionMap Get() { return m_Wrapper.m_Movement; }
+        public PlayerActions(@InputManager wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
-        public void SetCallbacks(IMovementActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_MovementActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
+                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
             }
-            m_Wrapper.m_MovementActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
-    public MovementActions @Movement => new MovementActions(this);
+    public PlayerActions @Player => new PlayerActions(this);
 
     // Camera
     private readonly InputActionMap m_Camera;
@@ -421,9 +460,10 @@ public class @InputManager : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
-    public interface IMovementActions
+    public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface ICameraActions
     {

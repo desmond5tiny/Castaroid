@@ -2,7 +2,7 @@
     "name": "InputManager",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Player",
             "id": "fc642593-74fb-41ae-ba67-8a24ce88b7ab",
             "actions": [
                 {
@@ -10,6 +10,14 @@
                     "type": "PassThrough",
                     "id": "fcf1b46e-3622-4198-84ae-f785fa8ffb41",
                     "expectedControlType": "Vector2",
+                    "processors": "NormalizeVector2",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "69e489d8-a084-414b-8774-f18822cd0e25",
+                    "expectedControlType": "Button",
                     "processors": "NormalizeVector2",
                     "interactions": "Press"
                 }
@@ -179,6 +187,28 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4f7e6a4a-02aa-42e7-b9c0-74dad15d0814",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a19ece2-32f8-4f92-815c-b4bb22d986c6",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

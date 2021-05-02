@@ -4,9 +4,11 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int mapSize;
+    [SerializeField] private int mapSize;
+    [SerializeField] private float startSpawnRadius = 3;
     [SerializeField] GameObject tileMaps;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerShip;
     [SerializeField] private bool generateNewSeed = false;
     
     private int gameSeed;
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
         if (generateNewSeed) //makes a new seed and stores it in playerprefs
         {
             gameSeed = (int)DateTime.Now.Ticks;
+            Debug.Log(gameSeed);
             PlayerPrefs.SetInt("gameSeed", gameSeed);
         }
         else if (PlayerPrefs.HasKey("gameSeed")) { gameSeed = PlayerPrefs.GetInt("gameSeed"); }
@@ -36,13 +39,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LevelSetup();
-        player.transform.position = mapManager.groundMap.CellToWorld(mapManager.GetPointInMap(mapManager.groundMap)) + new Vector3(0.5f,0.5f,0);
     }
 
     void LevelSetup()
     {
         mapManager.BuildMap(gameSeed, mapSize);
-        mapManager.PlaceGround();
+        playerShip.transform.position = mapManager.GetStartPos() + new Vector3(0, 0, 0);
+        player.transform.position = mapManager.GetStartPos() + new Vector3(0.5f, -0.5f);
     }
 
 }
